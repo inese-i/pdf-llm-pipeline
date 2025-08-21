@@ -1,32 +1,32 @@
 # PDF Pipeline with LangChain Code Improvement
 
-Clean, minimal solution for PDF processing with intelligent code improvement using LangChain agents.
+Clean, minimal PDF processing pipeline with LLM-powered code analysis and improvement.
 
-## What This Does
+## Current Implementation
+
+**What we have:** Basic but functional LLM-powered code improvement using LangChain chains.
 
 1. **Extract**: Uses pdfplumber + Camelot to extract text and tables from PDFs
-2. **Normalize**: Converts raw extraction data into structured invoice metadata
-3. **Analyze**: LangChain agent analyzes the normalization code for improvements
-4. **Improve**: Agent suggests and applies code improvements
-5. **Test**: Immediately re-runs pipeline with improved code and shows before/after comparison
+2. **Normalize**: Converts raw extraction data into structured invoice metadata  
+3. **Analyze**: LangChain LLM chains analyze the normalization code
+4. **Improve**: LLM suggests and applies code improvements
+5. **Test**: Re-runs pipeline with improved code, shows before/after comparison
 
-## Files Structure
+## Architecture
 
 ```
-clean_solution/
-├── pdf_improvement_demo.py          # Main Streamlit demo (NO RESTART ISSUES!)
-├── langchain_code_improvement_agent.py  # LangChain agent for code analysis
-├── pdf_pipeline_modular/            # Core PDF processing pipeline
+├── pdf_improvement_demo.py              # Streamlit demo (step-by-step workflow)
+├── langchain_code_improvement_agent.py  # LLM chains for code analysis  
+├── pdf_pipeline_modular/                # Core PDF processing pipeline
 │   ├── extractor/
-│   │   └── extractor_pdfplumber.py  # PDF extraction with pdfplumber + Camelot
+│   │   └── extractor_pdfplumber.py      # PDF extraction (pdfplumber + Camelot)
 │   └── normalizer/
-│       └── normalizer.py            # Data normalization (gets improved by agent)
-├── invoices/                        # Test PDF files
-│   └── Dummy_Invoice_Styled.pdf
-└── requirements.txt                 # Dependencies
+│       └── normalizer.py                # Data normalization (gets improved)
+├── invoices/                            # Test data (only dummy invoice tracked)
+└── requirements.txt                     # Dependencies
 ```
 
-## Setup
+## Quick Start
 
 1. **Install dependencies:**
    ```bash
@@ -43,37 +43,60 @@ clean_solution/
    streamlit run pdf_improvement_demo.py
    ```
 
-## How It Works
+## Current Workflow
 
-The demo is a **step-by-step process** that maintains state between steps (no restarts!):
+Step-by-step process with state management (no restart issues):
 
-1. **Upload PDF** → Upload any invoice PDF
-2. **Extract Data** → Extracts text and tables using pdfplumber + Camelot
-3. **Normalize** → Converts raw data to structured invoice fields
-4. **Agent Analysis** → LangChain agent analyzes the normalization code
-5. **Apply & Test** → Applies improvements and shows before/after comparison
+1. **Upload PDF** → Upload invoice PDF  
+2. **Extract Data** → pdfplumber + Camelot extraction
+3. **Normalize** → Convert to structured invoice fields
+4. **LLM Analysis** → Analyze normalization code with LangChain
+5. **Apply & Test** → Apply improvements, show before/after comparison
 
-## Key Features
+## Future Roadmap
 
-- ✅ **No restart issues** - Uses proper Streamlit session state management
-- ✅ **Real-time improvement testing** - Immediately shows results of code improvements
-- ✅ **Clean step-by-step workflow** - Easy to follow and debug
-- ✅ **Before/after comparison** - Visual comparison of extraction results
-- ✅ **Minimal dependencies** - Only essential packages
-- ✅ **Modular design** - Easy to extend and modify
+### Phase 1: Real Agents
+- **Tool integration** - Let LLMs execute code, run tests, call APIs
+- **ReAct pattern** - Reasoning + Acting loops for autonomous behavior  
+- **Error recovery** - Agents that can debug and fix their own mistakes
+- **Multi-agent collaboration** - Specialized agents working together
 
-## Dependencies
+### Phase 2: RAG Implementation  
+- **Vector database** - Store PDF extraction patterns, code examples
+- **Embedding search** - Find similar invoices/code patterns  
+- **Knowledge retrieval** - Pull relevant context for better improvements
+- **Learning from history** - Remember successful improvements
 
+### Phase 3: Advanced Features
+- **Active learning** - System learns from user feedback
+- **Custom model training** - Fine-tune on domain-specific data
+- **Multi-document analysis** - Process invoice batches
+- **Integration APIs** - Connect to accounting systems
+
+## Current Features
+
+- **Functional pipeline** - PDF → Extract → Normalize → Improve → Test
+- **LangChain integration** - Structured LLM chains for code analysis
+- **State management** - No restart issues in Streamlit demo
+- **Before/after comparison** - Visual results of code improvements  
+- **Modular design** - Easy to extend and modify
+- **Clean codebase** - Minimal dependencies, well-organized
+
+## Technical Details
+
+**Current LangChain usage:**
+- `ChatOpenAI` with GPT-4o-mini
+- `LLMChain` with specialized prompts
+- `ConversationBufferMemory` for context
+- Multiple "personas" (analyzer, improver, validator)
+
+**Dependencies:**
 - `streamlit` - Web interface
-- `langchain` - AI agent framework
-- `openai` - LLM API
-- `pdfplumber` - PDF text extraction
-- `camelot-py` - Table extraction
+- `langchain` + `langchain-openai` - LLM orchestration  
+- `pdfplumber` + `camelot-py` - PDF processing
 - `pandas` - Data handling
 
-## Notes
+## Contributing
 
-- The LangChain agent analyzes the `normalizer.py` file and suggests improvements
-- Improvements are applied directly to the code and tested immediately
-- Results are saved to JSON files with timestamps
-- The original normalizer is backed up before applying changes
+This is a learning project exploring the evolution from basic LLM calls → agents → RAG.
+Feel free to experiment with the roadmap phases!
