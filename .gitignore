@@ -1,0 +1,26 @@
+# Virtual Environment
+venv/
+
+# API Keys
+.env
+
+# Python Cache
+__pycache__/
+
+# System Files  
+.DS_Store
+
+# Temp Files
+temp_*
+
+# Backup Files
+*.backup_*
+*_improved.py
+
+# Result Files
+*_results_*.json
+
+# Real Invoice Files (keep only dummy)
+invoices/*
+!invoices/Dummy_Invoice_Styled.pdf
+!invoices/README.md
