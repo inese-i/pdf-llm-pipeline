@@ -1,0 +1,126 @@
+{
+  "extraction": {
+    "overall_coverage": 80.95238095238095,
+    "category_results": {
+      "invoice_info": {
+        "found": [
+          "INV-2025-0001",
+          "RECHNUNG"
+        ],
+        "missing": [
+          "2025.08.13"
+        ],
+        "coverage": 66.66666666666666,
+        "status": "⚠️"
+      },
+      "seller_info": {
+        "found": [
+          "Example GmbH",
+          "DE999999999",
+          "info@example-gmbh.de"
+        ],
+        "missing": [],
+        "coverage": 100.0,
+        "status": "✅"
+      },
+      "buyer_info": {
+        "found": [
+          "Testkunde",
+          "C-1001",
+          "Berlin"
+        ],
+        "missing": [],
+        "coverage": 100.0,
+        "status": "✅"
+      },
+      "line_items": {
+        "found": [
+          "Consulting",
+          "Software",
+          "Development",
+          "Std.",
+          "Stk.",
+          "€"
+        ],
+        "missing": [],
+        "coverage": 100.0,
+        "status": "✅"
+      },
+      "amounts": {
+        "found": [
+          "241,3"
+        ],
+        "missing": [
+          "1270",
+          "1511"
+        ],
+        "coverage": 33.33333333333333,
+        "status": "❌"
+      },
+      "payment_info": {
+        "found": [
+          "COBADEFFXXX",
+          "Musterbank AG"
+        ],
+        "missing": [
+          "DE89370400440532013000"
+        ],
+        "coverage": 66.66666666666666,
+        "status": "⚠️"
+      }
+    },
+    "extraction_stats": {
+      "pages": 1,
+      "text_elements": 133,
+      "tables": 1
+    }
+  },
+  "chunking": {
+    "avg_labeling_score": 56.25,
+    "chunk_analysis": [
+      {
+        "chunk_type": "line_items",
+        "predicted_type": null,
+        "label_accuracy": 0,
+        "content_relevance": 0,
+        "overall_score": 0.0,
+        "size": 8,
+        "confidence": 0.8
+      },
+      {
+        "chunk_type": "totals",
+        "predicted_type": "totals",
+        "label_accuracy": 100,
+        "content_relevance": 50.0,
+        "overall_score": 75.0,
+        "size": 70,
+        "confidence": 0.8
+      },
+      {
+        "chunk_type": "footer",
+        "predicted_type": "line_items",
+        "label_accuracy": 0,
+        "content_relevance": 100.0,
+        "overall_score": 50.0,
+        "size": 974,
+        "confidence": 0.8
+      },
+      {
+        "chunk_type": "line_items",
+        "predicted_type": "line_items",
+        "label_accuracy": 100,
+        "content_relevance": 100.0,
+        "overall_score": 100.0,
+        "size": 640,
+        "confidence": 0.9
+      }
+    ],
+    "essential_types_coverage": 100.0,
+    "missing_essential": []
+  },
+  "final_scores": {
+    "extraction": 80.95238095238095,
+    "chunking": 56.25,
+    "overall": 68.60119047619048
+  }
+}

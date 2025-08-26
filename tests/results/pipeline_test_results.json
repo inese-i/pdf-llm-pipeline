@@ -1,0 +1,115 @@
+{
+  "extraction": {
+    "total_elements": 133,
+    "found_fields": {
+      "invoice_number": {
+        "coverage": 100.0,
+        "found_terms": [
+          "INV-2025-0001",
+          "Rechnungsnummer"
+        ],
+        "total_terms": 2
+      },
+      "date": {
+        "coverage": 100.0,
+        "found_terms": [
+          "13.08.2025",
+          "Datum"
+        ],
+        "total_terms": 2
+      },
+      "amounts": {
+        "coverage": 25.0,
+        "found_terms": [
+          "\u20ac"
+        ],
+        "total_terms": 4
+      },
+      "vat_id": {
+        "coverage": 50.0,
+        "found_terms": [
+          "USt"
+        ],
+        "total_terms": 2
+      },
+      "bank_info": {
+        "coverage": 100.0,
+        "found_terms": [
+          "IBAN",
+          "BIC",
+          "DE89",
+          "COBADEFF"
+        ],
+        "total_terms": 4
+      },
+      "customer": {
+        "coverage": 100.0,
+        "found_terms": [
+          "Testkunde",
+          "UG"
+        ],
+        "total_terms": 2
+      },
+      "line_items": {
+        "coverage": 100.0,
+        "found_terms": [
+          "Consulting",
+          "Software",
+          "License",
+          "Std"
+        ],
+        "total_terms": 4
+      }
+    },
+    "overall_coverage": 82.14285714285714,
+    "combined_text": "RECHNUNG Example GmbH Rechnungsnummer: INV-2025-0001 Rechnungsdatum: 13.08.2025 F\u00e4llig bis: 27.08.2025 Rechnung an Testkunde UG (haftungsbeschr\u00e4nkt) Alexanderplatz 1 10178 Berlin Deutschland Kunden-Nr.: C-1001 info@example-gmbh.de (cid:127) +49 69 1234567 (cid:127) USt-IdNr. DE999999999 Leistungs\u00fcbersicht Beschreibung Menge Einheit Einzelpreis (nettoU)St. Betrag (netto) Consulting Services \u2013 July 2025 10,00 Std. 80,00 \u20ac 19% 800,00 \u20ac Software License \u2013 Pro Plan (1 Monat) 1,00 Stk. 120,00 \u20ac 19% 12..."
+  },
+  "chunking": {
+    "chunk_count": 4,
+    "chunk_analysis": {
+      "chunk_1": {
+        "type": "line_items",
+        "size": 8,
+        "important_indicators": 0,
+        "noise_indicators": 0,
+        "signal_ratio": 0,
+        "preview": "Services"
+      },
+      "chunk_2": {
+        "type": "totals",
+        "size": 70,
+        "important_indicators": 3,
+        "noise_indicators": 0,
+        "signal_ratio": 100.0,
+        "preview": "USt-IdNr.\nBetrag\nZwischensumme\nUmsatzsteuer\n<b>Gesamtbetrag\nMusterbank"
+      },
+      "chunk_3": {
+        "type": "footer",
+        "size": 974,
+        "important_indicators": 11,
+        "noise_indicators": 3,
+        "signal_ratio": 78.57142857142857,
+        "preview": "RECHNUNG\nExample\nGmbH\nRechnungsnummer:\nINV-2025-0001\nRechnungsdatum:\n13.08.2025\nF\u00e4llig\nbis:\n27.08.20..."
+      },
+      "chunk_4": {
+        "type": "line_items",
+        "size": 640,
+        "important_indicators": 5,
+        "noise_indicators": 0,
+        "signal_ratio": 100.0,
+        "preview": "TABLE: Invoice Line Items\n==================================================\nLINE ITEM 1:\n  Descript..."
+      }
+    },
+    "avg_signal_ratio": 69.64285714285714,
+    "has_essential_chunks": {
+      "line_items": true,
+      "totals": true,
+      "header": false
+    }
+  },
+  "scores": {
+    "extraction": 82.14285714285714,
+    "chunking": 69.64285714285714,
+    "overall": 75.89285714285714
+  }
+}

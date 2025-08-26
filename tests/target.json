@@ -1,0 +1,85 @@
+{
+  "source_file": "Dummy_Invoice_Styled.pdf",
+  "source_citation": ":contentReference[oaicite:1]{index=1}",
+  "document_type": "invoice",
+  "language": "de",
+  "currency": "EUR",
+  "seller": {
+    "name": "Example GmbH",
+    "contact": {
+      "email": "info@example-gmbh.de",
+      "phone": "+49 69 1234567"
+    },
+    "vat_id": "DE999999999",
+    "registration": {
+      "hrb": "HRB 123456",
+      "court": "Amtsgericht Frankfurt am Main"
+    }
+  },
+  "buyer": {
+    "name": "Testkunde UG (haftungsbeschränkt)",
+    "customer_number": "C-1001",
+    "address": {
+      "street": "Alexanderplatz 1",
+      "postal_code": "10178",
+      "city": "Berlin",
+      "country": "Deutschland"
+    }
+  },
+  "invoice": {
+    "number": "INV-2025-0001",
+    "issue_date": "2025-08-13",
+    "due_date": "2025-08-27",
+    "title": "RECHNUNG",
+    "page_note": "Example GmbH • HRB 123456 • Amtsgericht Frankfurt am Main Seite 1"
+  },
+  "line_items": [
+    {
+      "description": "Consulting Services – July 2025",
+      "quantity": { "value": 10.0, "unit": "Std.", "raw": "10,00 Std." },
+      "unit_price_net": { "value": 80.0, "raw": "80,00 €" },
+      "vat_rate": { "value": 0.19, "raw": "19%" },
+      "line_total_net": { "value": 800.0, "raw": "800,00 €" }
+    },
+    {
+      "description": "Software License – Pro Plan (1 Monat)",
+      "quantity": { "value": 1.0, "unit": "Stk.", "raw": "1,00 Stk." },
+      "unit_price_net": { "value": 120.0, "raw": "120,00 €" },
+      "vat_rate": { "value": 0.19, "raw": "19%" },
+      "line_total_net": { "value": 120.0, "raw": "120,00 €" }
+    },
+    {
+      "description": "Development – Feature XYZ Implementation",
+      "quantity": { "value": 5.0, "unit": "Std.", "raw": "5,00 Std." },
+      "unit_price_net": { "value": 70.0, "raw": "70,00 €" },
+      "vat_rate": { "value": 0.19, "raw": "19%" },
+      "line_total_net": { "value": 350.0, "raw": "350,00 €" }
+    }
+  ],
+  "totals": {
+    "subtotal_net": { "value": 1270.0, "raw": "1.270,00 €" },
+    "vat_total": { "value": 241.3, "raw": "241,30 €", "rate": "19%" },
+    "total_gross": { "value": 1511.3, "raw": "1.511,30 €" }
+  },
+  "payment": {
+    "terms": "Zahlungsziel: 14 Tage ohne Abzug",
+    "reference": "INV-2025-0001",
+    "bank": {
+      "name": "Musterbank AG",
+      "iban": "DE89 3704 0044 0532 0130 00",
+      "bic": "COBADEFFXXX"
+    }
+  },
+  "notes": [
+    "Dies ist eine Testrechnung zur Systemvalidierung. Kein tatsächlicher Zahlungsanspruch."
+  ],
+  "detected_sections": [
+    "Rechnung an",
+    "Leistungsübersicht",
+    "Zwischensumme (netto)",
+    "Umsatzsteuer (19%)",
+    "Gesamtbetrag (brutto)",
+    "Zahlungsinformationen",
+    "Hinweis"
+  ]
+}

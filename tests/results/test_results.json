@@ -1,0 +1,98 @@
+{
+  "extraction": {
+    "success": true,
+    "pages": 1,
+    "total_elements": 133,
+    "tables_found": 1,
+    "has_tables": true
+  },
+  "chunking": {
+    "success": true,
+    "total_chunks": 4,
+    "chunk_types": [
+      "line_items",
+      "totals",
+      "footer"
+    ],
+    "has_line_items": true,
+    "has_totals": true,
+    "has_structured_table": true
+  },
+  "field_extraction": {
+    "success": true,
+    "accuracy": 30.0,
+    "correct_count": 3,
+    "total_testable": 10,
+    "field_results": {
+      "invoice_number": {
+        "expected": "INV-2025-0001",
+        "actual": "INV-2025-0001",
+        "status": "correct"
+      },
+      "invoice_date": {
+        "expected": "13.08.2025",
+        "actual": "13.08.2025",
+        "status": "correct"
+      },
+      "vat_id": {
+        "expected": "DE123456789",
+        "actual": "Betrag\nZwischensu",
+        "status": "incorrect"
+      },
+      "customer_name": {
+        "expected": "Testkunde UG",
+        "actual": null,
+        "status": "missing"
+      },
+      "subtotal": {
+        "expected": "1270.00",
+        "actual": null,
+        "status": "missing"
+      },
+      "vat_amount": {
+        "expected": "241.30",
+        "actual": null,
+        "status": "missing"
+      },
+      "total": {
+        "expected": "1511.30",
+        "actual": "800.00",
+        "status": "incorrect"
+      },
+      "iban": {
+        "expected": "DE89370400440532013000",
+        "actual": "DE89\n3704\n0044\n0532\n0130\n00",
+        "status": "incorrect"
+      },
+      "bic": {
+        "expected": "COBADEFFXXX",
+        "actual": "COBADEFFXXX",
+        "status": "correct"
+      },
+      "bank_name": {
+        "expected": "Commerzbank",
+        "actual": "RECHNUNG\nExample\nGmbH\nRechnungsnummer",
+        "status": "incorrect"
+      }
+    },
+    "extracted_fields": {
+      "invoice_number": "INV-2025-0001",
+      "invoice_date": "13.08.2025",
+      "due_date": null,
+      "vat_id": "Betrag\nZwischensu",
+      "customer_name": null,
+      "subtotal": null,
+      "vat_amount": null,
+      "total": "800.00",
+      "iban": "DE89\n3704\n0044\n0532\n0130\n00",
+      "bic": "COBADEFFXXX",
+      "bank_name": "RECHNUNG\nExample\nGmbH\nRechnungsnummer"
+    }
+  },
+  "line_items": {
+    "success": true,
+    "expected_count": 2,
+    "found_count": 3,
+    "coverage": 1.5
+  }
+}
